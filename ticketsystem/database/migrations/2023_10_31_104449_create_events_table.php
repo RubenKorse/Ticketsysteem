@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');
             $table->string('location');
+            $table->decimal('price');
             $table->string('category');
             $table->timestamps();
         });
