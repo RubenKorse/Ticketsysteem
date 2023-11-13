@@ -3,6 +3,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
         <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+        <script src="https://kit.fontawesome.com/8603ec5cfb.js" crossorigin="anonymous"></script>
 
 
         <title>Ruben Admin</title>
@@ -11,10 +12,10 @@
         <header class="flex h-28 items-center bg-gray-800 text-gray-300 text-xl">
             <a class="text-3xl m-5 font-bold hover:text-white transition duration-300" href="/admin">Admin</a>
             <nav class="flex w-2/5 justify-center gap-10">
-                <a class="hover:text-white" href="#">Gebruikers</a>
+                <a class="hover:text-white" href="{{ route('admin.user') }}">Gebruikers</a>
                 <a class="hover:text-white" href="{{ route('admin.event') }}">Evenementen</a>
-                <a class="hover:text-white" href="#">Reservations</a>
-                <a class="hover:text-white" href="#">Tickets</a>
+                <a class="hover:text-white" href="{{ route('admin.reservation') }}">Reservations</a>
+                <a class="hover:text-white" href="{{ route('admin.tickets') }}">Tickets</a>
             </nav>
             @if (Route::has('login'))
                 <div class="flex w-3/5 m-5 gap-5 justify-end">
