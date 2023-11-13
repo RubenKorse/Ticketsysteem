@@ -28,25 +28,21 @@ class AdminController extends Controller
     public function store(Request $request){
 
         $this->validate($request, [
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
-            'location' => 'required|string|max:255',
-            'category' => 'required|in:Sport,Festivals,Films',
-            'image' => 'nullable|image',
+            'title' => 'required',
+            'description' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'location' => 'required',
+            'category' => 'required',
+            'price' => 'required',
         ], [
             'title.required' => 'The title field is required.',
-            'title.max' => 'The title field must not exceed 255 characters.',
             'description.required' => 'The description field is required.',
             'date.required' => 'The date field is required.',
-            'date.date' => 'Invalid date format.',
             'time.required' => 'The time field is required.',
-            'time.date_format' => 'Invalid time format.',
             'location.required' => 'The location field is required.',
-            'location.max' => 'The location field must not exceed 255 characters.',
             'category.required' => 'The category field is required.',
-            'category.in' => 'Invalid category.',
+            'price.required' => 'The price field is required'
         ]);
 
         $event = new Event();
@@ -56,6 +52,7 @@ class AdminController extends Controller
         $event->time = $request->time;
         $event->location = $request->location;
         $event->category = $request->category;
+        $event->price =$request->price;
         $event->save();
 
         session()->flash('success', 'Event has been created successfully!');
@@ -73,36 +70,36 @@ class AdminController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'date' => 'required|date',
+            'date' => 'required',
             'time' => 'required',
             'location' => 'required',
             'category' => 'required',
+            'price' => 'required',
         ], [
             'title.required' => 'The title field is required.',
-            'title.max' => 'The title field must not exceed 255 characters.',
             'description.required' => 'The description field is required.',
             'date.required' => 'The date field is required.',
-            'date.date' => 'Invalid date format.',
             'time.required' => 'The time field is required.',
-            'time.date_format' => 'Invalid time format.',
             'location.required' => 'The location field is required.',
-            'location.max' => 'The location field must not exceed 255 characters.',
             'category.required' => 'The category field is required.',
-            'category.in' => 'Invalid category.',
+            'price.required' => 'The price field is required'
         ]);
 
+        $event = Event::find($event->id);
         $event->title = $request->title;
         $event->description = $request->description;
         $event->date = $request->date;
         $event->time = $request->time;
         $event->location = $request->location;
         $event->category = $request->category;
+        $event->price = $request->price;
         $event->save();
 
         session()->flash('success', 'Event has been updated successfully!');
 
-        return redirect()->route('admin.event');
+        return redirect()->route('admin.event',);
     }
+
 
     public function destroy(Event $event)
 {
