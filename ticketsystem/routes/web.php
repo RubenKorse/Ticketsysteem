@@ -34,6 +34,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/{event}/edit', [AdminController::class, 'edit'])->name('admin.edit');
     Route::post('/admin/{event}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/{event}', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
+    Route::get('/admin/reservation', [AdminController::class, 'reservation'])->name('admin.reservation');
+    Route::get('/admin/tickets', [AdminController::class, 'tickets'])->name('admin.tickets');
 });
 
 
