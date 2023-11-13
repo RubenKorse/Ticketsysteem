@@ -24,8 +24,9 @@
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Date</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Time</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Location</th>
-                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider"></th>
-                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider"></th>
+                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Price</th>
+                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Edit</th>
+                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Delet</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,8 +37,9 @@
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->date }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->time }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->location }}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><a href="{{ route('admin.edit', $event->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a></td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><a href="{{ route('admin.destroy', $event->id) }}" class="text-red-600 hover:text-red-900">Delete</a></td>
+                        <td class="px-6 py-4 whitespace-no-wrap">{{ $event->price }}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap"><a href="{{ route('admin.edit', $event->id) }}" class="text-indigo-600 hover:text-indigo-900"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td class="px-6 py-4 whitespace-no-wrap"><a href="{{ route('admin.destroy', $event->id) }}" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash-can"></i></a></td>
                     </tr>
                     @endforeach
                 </tbody>
