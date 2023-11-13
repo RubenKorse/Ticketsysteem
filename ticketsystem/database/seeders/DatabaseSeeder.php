@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '14:00:00',
                 'location' => 'Location 1',
                 'category' => 'sport',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 2',
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '15:30:00',
                 'location' => 'Location 2',
                 'category' => 'festival',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 3',
@@ -37,6 +39,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '16:45:00',
                 'location' => 'Location 3',
                 'category' => 'films',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 4',
@@ -45,6 +48,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '18:00:00',
                 'location' => 'Location 4',
                 'category' => 'sport',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 5',
@@ -53,6 +57,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '19:15:00',
                 'location' => 'Location 5',
                 'category' => 'festival',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 6',
@@ -61,6 +66,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '20:30:00',
                 'location' => 'Location 6',
                 'category' => 'films',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 7',
@@ -69,6 +75,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '21:45:00',
                 'location' => 'Location 7',
                 'category' => 'sport',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 8',
@@ -77,6 +84,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '22:00:00',
                 'location' => 'Location 8',
                 'category' => 'festival',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 9',
@@ -85,6 +93,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '23:15:00',
                 'location' => 'Location 9',
                 'category' => 'films',
+                'price' => '100',
             ],
             [
                 'title' => 'Event 10',
@@ -93,6 +102,7 @@ class DatabaseSeeder extends Seeder
                 'time' => '23:30:00',
                 'location' => 'Location 10',
                 'category' => 'sport',
+                'price' => '100',
             ],
         ];
 
@@ -104,6 +114,7 @@ class DatabaseSeeder extends Seeder
                 'time' => $event['time'],
                 'location' => $event['location'],
                 'category' => $event['category'],
+                'price' => $event['price'],
             ]);
         }
     }
