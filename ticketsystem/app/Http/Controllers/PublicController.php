@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use Carbon\Carbon;
 
-class EventController extends Controller
+class PublicController extends Controller
 {
     public function index(){
 
@@ -42,5 +42,9 @@ class EventController extends Controller
                        ->get();
 
         return view('films', compact('events'));
+    }
+
+    public function show(Event $event){
+        return view('ticket', compact('event'));
     }
 }

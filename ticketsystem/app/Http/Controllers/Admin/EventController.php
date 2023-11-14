@@ -1,18 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
 
-class AdminController extends Controller
+class EventController extends Controller
 {
-    public function index(){
-
-        return view('admin.index');
-    }
-
     public function event(){
 
         $events = Event::orderBy('date', 'asc')->get();
