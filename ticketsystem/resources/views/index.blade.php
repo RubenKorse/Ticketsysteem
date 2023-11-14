@@ -11,7 +11,7 @@
 
             <div class="flex flex-col flex-grow">
                 <p class="font-bold text-xl mb-2">{{ $event->title }}</p>
-                <p class="text-gray-600 text-lg mb-2">{{ $event->description }}</p>
+                <p class="text-gray-600 text-lg mb-2">{!! $event->description !!}</p>
                 <p class="text-gray-600 text-lg"><i class="fa-solid fa-location-dot"></i> {{ $event->location }}</p>
                 <div class="flex flex-row items-center justify-between mb-2">
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-calendar"></i> {{ $event->date->format('d-m-Y') }}</p>
