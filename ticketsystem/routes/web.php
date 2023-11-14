@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [EventController::class, 'index'])->name('index');
+Route::get('/sports', [EventController::class, 'sports'])->name('sports');
+Route::get('/films', [EventController::class, 'films'])->name('films');
+Route::get('/festivals', [EventController::class, 'festivals'])->name('festivals');
 
 Route::get('/dashboard', [EventController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
