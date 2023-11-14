@@ -10,6 +10,6 @@ class Event extends Model
     use HasFactory;
 
     protected $casts = [
-        'date' => 'datetime:d-m-y'
+        'date' => 'date:d-m-y'
     ];
 }
