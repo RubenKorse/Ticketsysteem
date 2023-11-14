@@ -15,14 +15,14 @@ class AdminController extends Controller
 
     public function event(){
 
-        $events = Event::all();
+        $events = Event::orderBy('date', 'asc')->get();
 
-        return view('admin.event', compact('events'));
+        return view('admin.event.event', compact('events'));
     }
 
     public function create(){
 
-        return view('admin.create');
+        return view('admin.event.create');
     }
 
     public function store(Request $request){
@@ -62,7 +62,7 @@ class AdminController extends Controller
 
     public function edit(Event $event)
     {
-        return view('admin.edit', compact('event'));
+        return view('admin.event.edit', compact('event'));
     }
 
     public function update(Request $request, Event $event)
