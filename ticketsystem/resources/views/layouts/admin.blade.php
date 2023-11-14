@@ -10,24 +10,24 @@
     </head>
     <body class="bg-gray-600">
         <header class="flex h-28 items-center bg-gray-800 text-gray-300 text-xl">
-            <a class="text-3xl m-5 font-bold hover:text-white transition duration-300" href="/admin">Admin</a>
+            <a class="text-3xl m-5 font-bold hover:text-white transition duration-300" href="/">Ticketsysteem</a>
             <nav class="flex w-2/5 justify-center gap-10">
-                <a class="hover:text-white" href="{{ route('admin.user') }}">Gebruikers</a>
-                <a class="hover:text-white" href="{{ route('admin.event') }}">Evenementen</a>
+                <a class="hover:text-white" href="{{ route('admin.user') }}">Users</a>
+                <a class="hover:text-white" href="{{ route('admin.event') }}">Events</a>
                 <a class="hover:text-white" href="{{ route('admin.reservation') }}">Reservations</a>
                 <a class="hover:text-white" href="{{ route('admin.tickets') }}">Tickets</a>
             </nav>
             @if (Route::has('login'))
-                <div class="flex w-3/5 m-5 gap-5 justify-end">
+                <div class="flex w-3/5  gap-5 justify-end">
                     @auth
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
                                 <div @click="open = !open">
                                     <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-white dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150 text-xl">
-                                        <div>{{ auth()->user()->name }}</div>
                                         @if(auth()->user()->admin)
-                                            <div class="ml-1 text-green-500">Admin</div>
+                                            <div class="mr-2 text-green-500"><a href="/admin">Admin</a></div> |
                                         @endif
+                                    <div class="ml-2">{{ auth()->user()->name }}</div>
                                         <div class="ml-1">
                                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
