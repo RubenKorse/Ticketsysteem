@@ -21,6 +21,7 @@
                     <tr>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Title</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Description</th>
+                        <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">category</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Date</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Time</th>
                         <th class="px-6 py-3 bg-gray-200 dark:bg-gray-600 text-left text-xs leading-4 font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Location</th>
@@ -33,8 +34,9 @@
                     @foreach($events as $event)
                     <tr>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->title }}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{ $event->description }}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{ $event->date }}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap">{!! $event->description !!}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap">{{ $event->category }}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap">{{ $event->date->format('d-m-Y') }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->time }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->location }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap">{{ $event->price }}</td>
