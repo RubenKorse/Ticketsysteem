@@ -17,7 +17,7 @@
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-calendar"></i> {{ $event->date->format('d-m-Y') }}</p>
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-clock"></i> {{ $event->time }}</p>
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-euro-sign"></i> {{ $event->price }}</p>
-                    <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">Buy a ticket</a>
+                    <a href="{{ route('show', $event->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">Buy a ticket</a>
                 </div>
             </div>
         </div>
