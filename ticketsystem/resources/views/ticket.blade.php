@@ -9,7 +9,7 @@
             <p class="font-bold text-3xl mb-4">{{ $event->title }}:</p>
             <img src="https://picsum.photos/seed/{{ $event->id }}/800/600" alt="Event Image" class="w-full">
             <div class="flex flex-row items-center justify-around mb-4 mt-4">
-                <div>
+                <div class="flex flex-col items-center">
                     <p class="text-gray-600 text-lg mb-4">{!! $event->description !!}</p>
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-location-dot"></i> {{ $event->location }}</p>
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-calendar"></i> {{ $event->date->format('d-m-Y') }}</p>
