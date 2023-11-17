@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/tickt/{event}', [PublicController::class, 'show'])->name('show');
 });
 
 Route::middleware(['admin'])->group(function () {
@@ -43,6 +44,5 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/tickets', [AdminController::class, 'tickets'])->name('admin.tickets');
 });
 
-Route::get('/tickt/{event}', [PublicController::class, 'show'])->name('show');
 
 require __DIR__.'/auth.php';
