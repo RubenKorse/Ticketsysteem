@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->decimal('price');
-            $table->bolean('is_used');
+            $table->bolean('is_used')->default(false);
             $table->foreignid('reservation_id')->references('id')->on('reservations');
             $table->timestamps();
         });

@@ -22,7 +22,9 @@ Route::get('/sports', [PublicController::class, 'sports'])->name('sports');
 Route::get('/films', [PublicController::class, 'films'])->name('films');
 Route::get('/festivals', [PublicController::class, 'festivals'])->name('festivals');
 
-Route::get('/dashboard', [PublicController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return redirect('/');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
