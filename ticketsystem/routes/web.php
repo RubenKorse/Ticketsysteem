@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventController;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/tickt/{event}', [PublicController::class, 'show'])->name('show');
+    Route::get('/tickt/{event}', [TicketController::class, 'show'])->name('show');
+    Route::post('/ticket/store/{event_id}', [TicketController::class, 'store'])->name('ticket.store');
 });
 
 Route::middleware(['admin'])->group(function () {
