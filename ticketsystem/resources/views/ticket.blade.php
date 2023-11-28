@@ -16,11 +16,12 @@
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-clock"></i> {{ $event->time }}</p>
                     <p class="text-gray-600 text-lg"><i class="fa-solid fa-euro-sign"></i> {{ $event->price }}</p>
                 </div>
-                <div class="flex flex-col gap-2 items-center">
-                    <label for="ticketQuantity" class="text-lg font-semibold mb-2">Selecteer het aantal tickets:</label>
-                    <input type="number" id="ticketQuantity" name="ticketQuantity" class="border rounded-md px-3 py-2 w-16 text-center" value="1" min="1">
-                    <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition duration-300 ease-in-out">Buy Tickets</a>
-                </div>
+                    <form class="flex flex-col gap-2 items-center" action="{{ route('ticket.store', ['event_id' => $event->id]) }}" method="POST">
+                    @csrf
+                        <label for="ticketQuantity" class="text-lg font-semibold mb-2">Selecteer het aantal tickets:</label>
+                        <input type="number" id="ticketQuantity" name="ticketQuantity" class="border rounded-md px-3 py-2 w-16 text-center" value="1" min="1">
+                        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition duration-300 ease-in-out">Buy Tickets</button>
+                    </form>
             </div>
         </div>
     </div>
