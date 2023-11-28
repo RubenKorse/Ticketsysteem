@@ -43,8 +43,4 @@ class PublicController extends Controller
 
         return view('films', compact('events'));
     }
-
-    public function show(Event $event){
-        return view('ticket', compact('event'));
-    }
 }
