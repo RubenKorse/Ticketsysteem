@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->decimal('price');
-            $table->bolean('is_used')->default(false);
+            $table->boolean('is_used')->default(false);
             $table->foreignid('reservation_id')->references('id')->on('reservations');
             $table->timestamps();
         });
