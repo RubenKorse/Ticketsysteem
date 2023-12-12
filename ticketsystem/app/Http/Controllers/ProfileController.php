@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Reservation;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -56,5 +58,24 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function showReservations()
+    {
+        $user = auth()->user();
+        $reservations = $user->reservations()->with('event', 'tickets')->get();
+
+        // Sort reservations by date
+        $sortedReservations = $reservations->sortBy(function ($reservation) {
+            if ($reservation->event->date->isToday() && $reservation->tickets->isNotEmpty()) {
+                return 0; // Today's reservations with tickets scanned
+            } elseif ($reservation->event->date > now()) {
+                return 1; // Future reservations
+            } else {
+                return 2; // Historical reservations (expired or with tickets not scanned)
+            }
+        });
+
+        return view('reservations', compact('sortedReservations'));
     }
 }

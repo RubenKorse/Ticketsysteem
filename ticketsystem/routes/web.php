@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/tickt/{event}', [TicketController::class, 'show'])->name('show');
     Route::post('/ticket/store/{event_id}', [TicketController::class, 'store'])->name('ticket.store');
+    Route::get('/confirmation/{event}/{reservation}', [TicketController::class, 'showConfirmation'])->name('confirmation');
+    Route::get('/Reservations', [ProfileController::class, 'showReservations'])->name('Reservations');
 });
 
 Route::middleware(['admin'])->group(function () {

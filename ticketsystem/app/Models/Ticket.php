@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
+    protected $fillable = ['type', 'is_used', 'reservation_id'];
     use HasFactory;
 }

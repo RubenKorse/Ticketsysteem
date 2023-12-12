@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 use App\models\Event;
+use App\models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,20 @@ class DatabaseSeeder extends Seeder
      */
  public function run(): void
     {
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@curio.nl',
+            'password' => Hash::make('password'),
+            'admin' => true,
+        ]);
+
+        User::create([
+            'name' => 'User',
+            'email' => 'user@curio.nl',
+            'password' => Hash::make('password'),
+            'admin' => false,
+        ]);
+
         $events = [
             [
                 'title' => 'Event 1',

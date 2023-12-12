@@ -4,11 +4,6 @@
         alert("{{ session('error') }}");
     </script>
 @endif
-@if (session('success'))
-    <div class="bg-green-200 text-green-800 py-2 px-4 mb-4 rounded">
-        {{ session('success') }}
-    </div>
-@endif
 <div class="grid grid-cols-3 gap-4">
     @foreach($events as $event)
         <div class="bg-white p-4 shadow-md flex flex-col">
