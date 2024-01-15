@@ -18,7 +18,7 @@ class PublicController extends Controller
     }
 
     public function sports(){
-        $events = Event::where('category', 'sports')
+        $events = Event::where('category', 'sport')
                        ->whereDate('date', '>=', Carbon::tomorrow())
                        ->orderBy('date', 'asc')
                        ->get();
@@ -27,7 +27,7 @@ class PublicController extends Controller
     }
 
     public function festivals(){
-        $events = Event::where('category', 'festivals')
+        $events = Event::where('category', 'festival')
                        ->whereDate('date', '>=', Carbon::tomorrow())
                        ->orderBy('date', 'asc')
                        ->get();
